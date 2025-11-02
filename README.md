@@ -18,3 +18,16 @@ Automated data pipeline to collect, process, and store city, weather, and flight
 2. **weather_forecast**: Stores weather data linked to cities.  
 3. **airports**: Stores airport information linked to cities.  
 4. **flights**: Stores real-time flight arrivals linked to airports and cities.
+
+
+## Usage
+
+Once deployed, the pipeline automatically fetches and updates:
+
+City demographics
+
+Weather forecasts
+
+Flight arrivals
+
+This data can then be used for analytics, visualizations, or predictive modeling, e.g., predicting e-scooter demand in urban area
