@@ -1,0 +1,10 @@
+functions-framework
+requests
+pandas
+sqlalchemy
+pymysql
+pytz
+python-dotenv
+beautifulsoup4
+lat-lon-parser
+datetime
