@@ -1,33 +1,77 @@
-# Automated-City-Weather-Flight-Pipeline
-Automated data pipeline to collect, process, and store city, weather, and flight data. Built with Python, MySQL, and Google Cloud, this project enables scalable, cloud-based integration of multiple data sources to support analytics and predictive modeling, such as e-scooter demand forecasting.
+# 🌍 Automated City Weather & Flight Data Pipeline
 
+## Project Overview
+This project implements an **automated, cloud-based data pipeline** that collects, processes, and stores **city demographics, weather forecasts, and flight data** from multiple external sources.
 
+The pipeline is designed to support **scalable analytics and predictive modeling**, such as **urban e-scooter demand forecasting**, by continuously updating structured data in a relational database.
 
- 
- ## Features
-- Web scraping of city names, population, and geographic coordinates from Wikipedia.  
-- Integration with **OpenWeatherMap API** to fetch 5-day, 3-hour weather forecasts.  
-- Real-time flight data collection via **AeroDataBox API**.  
-- Structured **MySQL relational database** linking cities, weather, and flights.  
-- Cloud deployment using **Google Cloud Functions** and **Cloud Scheduler** for automated updates.  
-- Modular Python functions for easy maintenance and scalability.
+---
 
-  The relational database includes the following tables:  
+## Business Use Case
+Urban mobility and logistics applications (e.g., e-scooters, ride-sharing) depend on:
+- Weather conditions
+- City population characteristics
+- Flight arrivals and travel activity
 
-1. **cities**: Stores city names, population, and coordinates.  
-2. **weather_forecast**: Stores weather data linked to cities.  
-3. **airports**: Stores airport information linked to cities.  
-4. **flights**: Stores real-time flight arrivals linked to airports and cities.
+This pipeline provides a **reliable and automated data foundation** for downstream analytics and forecasting models.
 
+---
 
-## Usage
+## Data Sources
+- **Wikipedia** — city names, population, geographic coordinates (web scraping)
+- **OpenWeatherMap API** — 5-day / 3-hour weather forecasts
+- **AeroDataBox API** — real-time flight arrival data
 
-Once deployed, the pipeline automatically fetches and updates:
+---
 
-City demographics
+## System Architecture & Workflow
+1. Web scraping collects city metadata
+2. APIs fetch weather forecasts and flight data
+3. Python scripts process and normalize incoming data
+4. Data is stored in a **MySQL relational database**
+5. **Google Cloud Functions** execute ingestion logic
+6. **Google Cloud Scheduler** triggers automated updates
 
-Weather forecasts
+---
 
-Flight arrivals
+## Database Design
+The relational database schema includes:
 
-This data can then be used for analytics, visualizations, or predictive modeling, e.g., predicting e-scooter demand in urban area
+- **cities**
+  - City name, population, latitude, longitude
+- **weather_forecast**
+  - Forecast data linked to cities
+- **airports**
+  - Airport details linked to cities
+- **flights**
+  - Real-time flight arrivals linked to airports and cities
+
+This structure enables efficient joins and time-based analytics.
+
+---
+
+## Key Features
+- Automated data ingestion and updates
+- Integration of multiple real-world data sources
+- Cloud-based deployment for scalability
+- Modular Python functions for maintainability
+- Relational schema optimized for analytics
+
+---
+
+## Applications
+The collected data can be used for:
+- Exploratory data analysis
+- Dashboarding and visualization
+- Time-series forecasting
+- Predictive modeling (e.g., e-scooter demand in urban areas)
+
+---
+
+## Tech Stack
+- **Python** — data ingestion, processing, automation  
+- **MySQL** — relational data storage  
+- **Google Cloud Functions** — serverless execution  
+- **Google Cloud Scheduler** — automated pipeline scheduling  
+- **APIs** — OpenWeatherMap, AeroDataBox  
+
